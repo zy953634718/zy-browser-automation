@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f5f6f8"/>
+  <rect x="210" y="35" width="540" height="470" rx="12" fill="#fff" stroke="#e5e6eb"/>
+  <text x="246" y="79" fill="#1f2329" font-size="22" font-weight="600" font-family="Microsoft YaHei,sans-serif">浏览器 AI 助手设置</text>
+  <text x="246" y="105" fill="#8a9099" font-size="13" font-family="Microsoft YaHei,sans-serif">配置 DeepSeek 模型接入，保存后自动同步到本地服务。</text>
+  <text x="246" y="151" fill="#1f2329" font-size="15" font-weight="600" font-family="Microsoft YaHei,sans-serif">DeepSeek API Key</text>
+  <rect x="246" y="163" width="468" height="40" rx="8" fill="#fff" stroke="#3478f6"/>
+  <text x="260" y="188" fill="#8a9099" font-size="14" font-family="Arial">sk-••••••••••••••••</text>
+  <text x="246" y="224" fill="#8a9099" font-size="12" font-family="Microsoft YaHei,sans-serif">在 platform.deepseek.com 申请，密钥只保存在本机。</text>
+  <text x="246" y="270" fill="#1f2329" font-size="15" font-weight="600" font-family="Microsoft YaHei,sans-serif">模型</text>
+  <rect x="246" y="282" width="468" height="40" rx="8" fill="#fff" stroke="#d9dce1"/>
+  <text x="260" y="307" fill="#1f2329" font-size="14" font-family="Arial">deepseek-chat</text>
+  <text x="246" y="369" fill="#1f2329" font-size="15" font-weight="600" font-family="Microsoft YaHei,sans-serif">服务地址（一般无需修改）</text>
+  <rect x="246" y="381" width="468" height="40" rx="8" fill="#fff" stroke="#d9dce1"/>
+  <text x="260" y="406" fill="#1f2329" font-size="14" font-family="Arial">ws://127.0.0.1:18767</text>
+  <rect x="246" y="449" width="92" height="36" rx="8" fill="#3478f6"/><text x="275" y="473" fill="#fff" font-size="15" font-family="Microsoft YaHei,sans-serif">保存</text>
+  <text x="352" y="473" fill="#34c759" font-size="14" font-family="Microsoft YaHei,sans-serif">已保存并同步 ✓</text>
+</svg>

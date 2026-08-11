@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>浏览器 AI 助手 - 设置</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: #f5f6f8;
+      color: #1f2329;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      width: 480px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      border: 1px solid #e5e6eb;
+    }
+    h1 { font-size: 17px; margin-bottom: 4px; }
+    .desc { font-size: 12px; color: #8a9099; margin-bottom: 20px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; margin-bottom: 6px; font-weight: 600; }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d9dce1;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+    }
+    input:focus { border-color: #3478f6; }
+    .hint { font-size: 11px; color: #8a9099; margin-top: 4px; }
+    .actions { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+    .btn-save {
+      border: none;
+      background: #3478f6;
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-save:hover { background: #2b68d9; }
+    #saveStatus { font-size: 12px; }
+    .save-ok { color: #34c759; }
+    .save-err { color: #ff3b30; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>浏览器 AI 助手设置</h1>
+    <div class="desc">配置 DeepSeek 模型接入。保存后自动同步到本地服务。</div>
+
+    <div class="field">
+      <label for="apiKey">DeepSeek API Key</label>
+      <input type="password" id="apiKey" placeholder="sk-...">
+      <div class="hint">在 platform.deepseek.com 申请。仅保存在本地（chrome.storage + 本地服务）。</div>
+    </div>
+
+    <div class="field">
+      <label for="model">模型</label>
+      <input type="text" id="model" placeholder="deepseek-chat">
+      <div class="hint">默认 deepseek-chat，可填写 deepseek-reasoner 等其他模型名。</div>
+    </div>
+
+    <div class="field">
+      <label for="wsUrl">服务地址</label>
+      <input type="text" id="wsUrl" placeholder="ws://127.0.0.1:18767">
+      <div class="hint">本地服务 WebSocket 地址，一般无需修改。</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-save" id="btnSave">保存</button>
+      <span id="saveStatus"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "浏览器 AI 助手",
+  "version": "2.2.0",
+  "description": "通用浏览器 AI 助手：支持任务规划、进度追踪和可停止的浏览器自动化",
+  "key": "MIIBIjAPBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy2TeREGuS4HO8KPcu4VPiRz/WIfdzScA/EjtnPY2eO1cptBV+Ga39D88QiVRO6BGC4Zl9GQ3KGDWPWUZJc4kTX1i4NdlmoF3FTJBcArj2xEml6YVJN5jDuYjPHJZ2GpWOnNTtj7Tv41np6iCfzfXmsE7h7MVhv6A0cEPzoYvlP/FVfh0GD1mSMnI3BqEb+GOwFDFFADpMIUiviUllZIVGpJYVSqsxffuUbqEV5HeG7WRUE0r+iPPQkMb2k8uK78mN7Lp/i77+DpFc6SY9YghhnIWdqPPxwvvIk6xy0D34NqXd9lACcxIx+/ppvThNT3sAcXKTKl8A1W5MYr21A1poQIDAQAB",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "tabs",
+    "storage",
+    "nativeMessaging",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background_v2.js"
+  },
+  "options_page": "options.html",
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

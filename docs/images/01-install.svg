@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" rx="12" fill="#101522"/>
+  <rect width="960" height="42" rx="12" fill="#202a3b"/>
+  <circle cx="24" cy="21" r="7" fill="#ff5f57"/><circle cx="48" cy="21" r="7" fill="#febc2e"/><circle cx="72" cy="21" r="7" fill="#28c840"/>
+  <text x="105" y="27" fill="#cbd5e1" font-size="15" font-family="Segoe UI,Microsoft YaHei,sans-serif">浏览器 AI 助手安装程序</text>
+  <text x="28" y="83" fill="#79c0ff" font-size="17" font-family="Consolas,monospace">D:\\browser-ai-assistant&gt; install.bat</text>
+  <text x="28" y="125" fill="#a7f3d0" font-size="17" font-family="Microsoft YaHei,sans-serif">[install] 服务依赖已就绪（跳过 pip）</text>
+  <text x="28" y="162" fill="#a7f3d0" font-size="17" font-family="Microsoft YaHei,sans-serif">[install] Native Host 清单已生成</text>
+  <text x="28" y="199" fill="#a7f3d0" font-size="17" font-family="Microsoft YaHei,sans-serif">[install] 服务已启动</text>
+  <text x="28" y="263" fill="#fef08a" font-size="19" font-family="Microsoft YaHei,sans-serif">安装完成。下一步：</text>
+  <text x="45" y="305" fill="#e2e8f0" font-size="17" font-family="Microsoft YaHei,sans-serif">1. 打开 chrome://extensions，开启开发者模式</text>
+  <text x="45" y="341" fill="#e2e8f0" font-size="17" font-family="Microsoft YaHei,sans-serif">2. 加载 browser-extension 文件夹</text>
+  <text x="45" y="377" fill="#e2e8f0" font-size="17" font-family="Microsoft YaHei,sans-serif">3. 打开扩展设置并填写 API Key</text>
+  <rect x="26" y="430" width="908" height="66" rx="8" fill="#192235" stroke="#334155"/>
+  <text x="46" y="469" fill="#94a3b8" font-size="16" font-family="Microsoft YaHei,sans-serif">提示：以后打开扩展会自动启动本地服务，无需手动运行 Python。</text>
+</svg>

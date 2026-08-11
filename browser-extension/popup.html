@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>浏览器 AI 助手</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 380px;
+      height: 560px;
+      display: flex;
+      flex-direction: column;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: #f5f6f8;
+      color: #1f2329;
+    }
+
+    /* 顶栏 */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: #fff;
+      border-bottom: 1px solid #e5e6eb;
+      flex-shrink: 0;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #bbb;
+      flex-shrink: 0;
+    }
+    .dot.connected    { background: #34c759; }
+    .dot.disconnected { background: #ff3b30; }
+    .dot.connecting   { background: #ff9500; }
+    .dot.error        { background: #ff3b30; }
+    .status-text { font-size: 12px; color: #646a73; flex: 1; }
+    .title { font-size: 13px; font-weight: 600; }
+    .btn-settings {
+      border: none; background: none; cursor: pointer;
+      font-size: 15px; color: #646a73; padding: 2px 4px; border-radius: 4px;
+    }
+    .btn-settings:hover { background: #f0f1f3; }
+
+    /* 消息列表 */
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .msg {
+      max-width: 85%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+    .msg.user {
+      align-self: flex-end;
+      background: #3478f6;
+      color: #fff;
+      border-bottom-right-radius: 3px;
+    }
+    .msg.assistant {
+      align-self: flex-start;
+      background: #fff;
+      border: 1px solid #e5e6eb;
+      border-bottom-left-radius: 3px;
+    }
+    .msg.error {
+      align-self: flex-start;
+      background: #fff1f0;
+      border: 1px solid #ffccc7;
+      color: #a8071a;
+    }
+    .msg.tool {
+      align-self: flex-start;
+      max-width: 95%;
+      background: transparent;
+      color: #8a9099;
+      font-size: 12px;
+      padding: 2px 4px;
+    }
+    .msg.tool .tool-name { color: #57607a; font-weight: 600; }
+    .msg.thinking {
+      align-self: flex-start;
+      color: #8a9099;
+      font-size: 12px;
+      background: transparent;
+    }
+    .thinking .pulse::after {
+      content: "…";
+      animation: blink 1s infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* 输入区 */
+    .input-row {
+      display: flex;
+      gap: 8px;
+      padding: 10px 12px;
+      background: #fff;
+      border-top: 1px solid #e5e6eb;
+      flex-shrink: 0;
+    }
+    .input-row textarea {
+      flex: 1;
+      resize: none;
+      border: 1px solid #d9dce1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: inherit;
+      max-height: 90px;
+      outline: none;
+    }
+    .input-row textarea:focus { border-color: #3478f6; }
+    .btn-send {
+      border: none;
+      background: #3478f6;
+      color: #fff;
+      border-radius: 8px;
+      padding: 0 16px;
+      font-size: 13px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .btn-send:disabled { background: #b7c8ef; cursor: not-allowed; }
+
+    .welcome { text-align: center; color: #8a9099; font-size: 12px; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="dot" id="statusDot"></span>
+    <span class="title">浏览器 AI 助手</span>
+    <span class="status-text" id="statusText">未连接</span>
+    <button class="btn-settings" id="btnSettings" title="设置">⚙</button>
+  </div>
+
+  <div class="messages" id="messages">
+    <div class="welcome">我是浏览器 AI 助手，可以读取页面、点击、输入、打开网页……<br>输入你想做的事，例如「这个页面讲了什么」</div>
+  </div>
+
+  <div class="input-row">
+    <textarea id="input" rows="1" placeholder="输入指令，Enter 发送"></textarea>
+    <button class="btn-send" id="btnSend" disabled>发送</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

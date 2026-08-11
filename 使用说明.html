@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>浏览器 AI 助手｜Windows / macOS 小白使用说明</title>
+  <style>
+    :root { --blue:#3478f6; --ink:#172033; --muted:#667085; --line:#e6eaf0; --bg:#f6f8fb; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.75 "Segoe UI","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:1040px; margin:0 auto; padding:28px 22px 70px; }
+    .hero { padding:36px 40px; border-radius:20px; color:#fff; background:linear-gradient(135deg,#3478f6,#5c4ef5); box-shadow:0 12px 32px #3158b833; }
+    h1 { margin:0 0 8px; font-size:32px; line-height:1.25; }
+    h2 { margin:44px 0 14px; font-size:24px; }
+    h3 { margin:20px 0 6px; font-size:18px; }
+    p { margin:8px 0; }
+    .hero p { max-width:760px; opacity:.92; }
+    .badge { display:inline-block; margin-top:15px; padding:4px 11px; border-radius:99px; background:#ffffff24; font-size:13px; }
+    .toc, .card { background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 3px 12px #14213d0a; }
+    .toc { margin-top:18px; padding:18px 22px; }
+    .toc a { color:var(--blue); text-decoration:none; margin-right:18px; white-space:nowrap; }
+    .toc a:hover { text-decoration:underline; }
+    .platforms { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .platform { padding:18px 20px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .platform h3 { margin-top:0; }
+    .platform a { color:var(--blue); font-weight:600; }
+    .card { padding:22px 24px; margin:14px 0; }
+    .step { display:flex; gap:14px; align-items:flex-start; }
+    .num { flex:0 0 34px; height:34px; border-radius:50%; background:var(--blue); color:#fff; display:grid; place-items:center; font-weight:700; }
+    .step > div:last-child { flex:1; }
+    .shot { width:100%; display:block; border:1px solid var(--line); border-radius:10px; margin:14px 0 6px; background:#fff; }
+    figcaption { color:var(--muted); font-size:13px; text-align:center; }
+    .tip, .warn { padding:12px 15px; border-radius:9px; margin:12px 0; }
+    .tip { background:#eef6ff; border-left:4px solid var(--blue); }
+    .warn { background:#fff8e8; border-left:4px solid #f0a400; }
+    ul, ol { padding-left:24px; }
+    code { padding:2px 6px; border-radius:5px; color:#173b72; background:#edf2fa; font-family:Consolas,monospace; }
+    pre { position:relative; overflow:auto; padding:15px 17px; border-radius:9px; background:#172033; color:#e4edff; }
+    pre code { padding:0; color:inherit; background:none; }
+    .copy { position:absolute; right:10px; top:9px; border:1px solid #ffffff55; border-radius:6px; padding:3px 9px; color:#fff; background:#ffffff18; cursor:pointer; }
+    table { border-collapse:collapse; width:100%; margin:10px 0; }
+    th, td { padding:9px 10px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { background:#f8fafc; }
+    details { border-top:1px solid var(--line); padding:12px 0; }
+    details:first-of-type { border-top:0; }
+    summary { cursor:pointer; font-weight:600; }
+    .ok { color:#138a4b; font-weight:600; }
+    footer { color:var(--muted); text-align:center; margin-top:38px; font-size:13px; }
+    @media (max-width:650px) { .wrap{padding:16px 12px 45px}.hero{padding:26px 22px}h1{font-size:26px}h2{font-size:21px}.card{padding:17px}.platforms{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <h1>浏览器 AI 助手</h1>
+    <p>给浏览器装上一个会“看页面、点按钮、填表单、打开网页”的 AI 助手。照着下面的图文步骤操作，不需要学习 Python，也不需要配置环境变量。</p>
+    <span class="badge">支持 Windows 与 macOS + Chrome / Edge</span>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <strong>快速跳转：</strong>
+    <a href="#before">安装前准备</a><a href="#python">安装 Python</a><a href="#macos">macOS</a><a href="#install">安装</a><a href="#load">加载扩展</a><a href="#config">配置</a><a href="#use">第一次使用</a><a href="#history">历史记录</a><a href="#agent">Agent 能力</a><a href="#faq">故障排查</a><a href="#remove">卸载</a>
+  </nav>
+
+  <section aria-label="按系统选择">
+    <div class="platforms">
+      <div class="platform"><h3>🪟 Windows</h3><p>双击项目根目录的 <code>install.bat</code>，再按“安装”章节加载扩展。</p><a href="#install">查看 Windows 步骤 →</a></div>
+      <div class="platform"><h3>🍎 macOS</h3><p>在终端运行 <code>bash install.command</code>；首次运行若被拦截，请到“隐私与安全性”允许。</p><a href="#macos">查看 macOS 步骤 →</a></div>
+    </div>
+  </section>
+
+  <section id="before">
+    <h2>一、安装前准备</h2>
+    <div class="card">
+      <ul>
+        <li>Windows 10/11 或 macOS，已安装最新版 Chrome 或 Edge。</li>
+        <li>一份项目<strong>正式发布包</strong>（里面应看到 <code>runtime</code> 文件夹）。</li>
+        <li>一个 DeepSeek API Key。没有密钥时可以先完成安装，但无法进行 AI 对话。</li>
+      </ul>
+      <div class="warn"><strong>重要：</strong>不要只下载源代码目录给普通用户。请先按文末“给别人分发”生成带运行时的发布包。</div>
+    </div>
+  </section>
+
+
+
+  <section id="macos">
+    <h2>macOS 用户专用步骤</h2>
+    <div class="card">
+      <p>macOS 没有 Windows 的注册表，安装脚本会把 Native Messaging 清单写入当前用户目录。请按下面方式运行：</p>
+      <ol>
+        <li>解压发布包，在 Finder 中打开项目文件夹。</li>
+        <li>右键 <code>install.command</code>，选择“打开”。若系统提示无法验证，请打开“系统设置 → 隐私与安全性”选择“仍要打开”。</li>
+        <li>如果双击没有反应，打开“终端”，把项目文件夹拖进终端后输入：<code>bash install.command</code>。</li>
+        <li>安装完成后，在 Chrome 打开 <code>chrome://extensions</code>，或在 Edge 打开 <code>edge://extensions</code>，完成“加载已解压的扩展”。</li>
+      </ol>
+      <div class="tip">macOS 发布包应包含 <code>runtime/bin/python3</code>。如果你拿到的是源代码包，需要先安装 Python 3.10+，然后在项目目录运行 <code>python3 scripts/install.py</code>。</div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>二、安装本地服务（只需一次）</h2>
+    <div class="card step"><span class="num">1</span><div><h3>解压到普通文件夹</h3><p>例如 <code>D:\browser-ai-assistant</code>。路径中尽量不要使用特殊符号或网盘同步目录。</p></div></div>
+    <div class="card step"><span class="num">2</span><div><h3>双击 install.bat</h3><p>看到黑色窗口时不要关闭，等待出现“安装完成”。脚本会自动注册浏览器连接所需的 Native Messaging，并启动本地服务。</p><figure><img class="shot" src="docs/images/01-install.svg" alt="安装脚本完成提示截图"><figcaption>图 1：安装脚本完成后会显示下一步提示</figcaption></figure></div></div>
+    <div class="tip">以后如果移动了整个项目文件夹，再双击一次 <code>install.bat</code> 即可更新路径。通常不需要卸载旧版本。</div>
+  </section>
+
+  <section id="load">
+    <h2>三、在 Chrome / Edge 加载扩展</h2>
+    <div class="card step"><span class="num">3</span><div><h3>打开扩展管理页</h3><p>Chrome 地址栏输入 <code>chrome://extensions</code>；Edge 输入 <code>edge://extensions</code>。</p><p>打开右上角<strong>开发者模式</strong>，点击<strong>加载已解压的扩展</strong>，选择发布包里的 <code>browser-extension</code> 文件夹（不要选它里面的文件）。</p><figure><img class="shot" src="docs/images/02-extensions.svg" alt="浏览器扩展管理页截图"><figcaption>图 2：开启开发者模式并加载 browser-extension 文件夹</figcaption></figure></div></div>
+    <div class="card"><h3>固定扩展（推荐）</h3><p>加载成功后，点击浏览器工具栏的拼图图标，把“浏览器 AI 助手”固定到工具栏。以后点击蓝色 AI 图标会直接在浏览器右侧打开侧边栏，不会遮挡当前网页。</p></div>
+  </section>
+
+  <section id="config">
+    <h2>四、配置 API Key</h2>
+    <div class="card step"><span class="num">4</span><div><h3>打开设置页</h3><p>点击扩展图标右上角的齿轮按钮；或者在扩展管理页找到本扩展，点击“详细信息 → 扩展程序选项”。</p><figure><img class="shot" src="docs/images/03-options.svg" alt="扩展设置页截图"><figcaption>图 3：只需填写 API Key，其他地址保持默认</figcaption></figure></div></div>
+    <div class="card">
+      <h3>每一项怎么填？</h3>
+      <table><thead><tr><th>项目</th><th>填写内容</th><th>小白提示</th></tr></thead><tbody>
+        <tr><td>DeepSeek API Key</td><td>以 <code>sk-</code> 开头的密钥</td><td>在 DeepSeek 控制台创建；不要发给别人。</td></tr>
+        <tr><td>模型</td><td><code>deepseek-chat</code></td><td>保持默认即可，想使用推理模型时再改。</td></tr>
+        <tr><td>服务地址</td><td><code>ws://127.0.0.1:18767</code></td><td>这是本机地址，不要改成网页地址。</td></tr>
+      </tbody></table>
+      <p class="ok">看到“已保存并同步 ✓”就代表配置完成。</p>
+      <div class="warn">API Key 只保存在本机的浏览器存储和本地配置文件中。请勿把 <code>service/config.local.json</code> 打包或上传。</div>
+    </div>
+  </section>
+
+  <section id="use">
+    <h2>五、第一次使用</h2>
+    <div class="card step"><span class="num">5</span><div><h3>打开一个普通网页</h3><p>先打开新闻、商品页或文档页。Chrome 的新标签页、扩展管理页、银行等受保护页面可能不允许脚本执行。</p></div></div>
+    <div class="card step"><span class="num">6</span><div><h3>点击 AI 图标并提问</h3><p>第一次打开时，状态灯会从“连接中”变成“已连接”。用自然语言告诉它要做什么，例如：</p><ul><li>“总结一下当前页面，列出 3 个重点。”</li><li>“找出页面上所有商品名称和价格。”</li><li>“滚动到底部，点击‘下一页’。”</li><li>“打开百度并搜索浏览器自动化。”</li></ul><figure><img class="shot" src="docs/images/04-chat.svg" alt="扩展聊天窗口截图"><figcaption>图 4：聊天窗口会显示正在执行的浏览器操作</figcaption></figure></div></div>
+    <div class="tip"><strong>更容易成功的说法：</strong>先说“读取/总结页面”，再说“点击/输入”。涉及付款、删除、提交等敏感动作时，请在操作前仔细确认页面。</div>
+  </section>
+
+  <section id="history">
+    <h2>六、历史记录与新对话</h2>
+    <div class="card"><p>侧边栏会自动保存每次对话。关闭侧边栏或重启浏览器后，再次点击扩展图标会回到上一次打开的对话。</p><ol><li>点击顶部“历史对话”下拉框，可切换以前的会话。</li><li>点击“＋ 新对话”，才会创建一个全新的会话。</li><li>新对话会以你发送的第一句话自动命名，最多保留最近 50 个会话。</li></ol><div class="tip">历史记录保存在 Chrome/Edge 的本地扩展存储中，不会上传到服务器。清除扩展数据会同时删除历史记录。</div></div>
+  </section>
+
+  <section id="agent">
+    <h2>七、Agent、长期记忆与本地文件</h2>
+    <div class="card"><h3>让 Agent 记住信息</h3><p>直接说“请记住：我喜欢 CSV 格式，默认使用简体中文”。只有明确说“记住”时才会写入长期记忆。记忆保存在项目目录的 <code>service/data/agent_memory.json</code>，不会上传到云端。</p><h3>从当前对话生成 Skill</h3><p>当一套操作验证成功后，说“把刚才的操作经验总结成一个 Skill，命名为 xxx，并保存到本地”。Agent 会调用 <code>create_skill</code>，生成 <code>skills/xxx/SKILL.md</code>。下一次遇到相似任务，Agent 会从可用 Skill 清单中选择并先读取它。</p><h3>调用 Skill</h3><p>也可以把自定义工作流放入 <code>skills/你的技能名/SKILL.md</code>，然后告诉 Agent“列出可用 Skill”或“读取 xxx Skill 并按它执行”。</p><h3>保存生成文件</h3><p>直接说“把刚才的数据保存为 products.csv”或“生成 Markdown 报告并保存”。文件会写入项目目录下的 <code>outputs/</code>，可在资源管理器中直接打开。</p><div class="warn">长期记忆、Skill 和输出文件属于本机数据。分享项目压缩包前，请确认没有把 <code>service/data/agent_memory.json</code>、<code>service/config.local.json</code>、<code>skills/</code> 或 <code>outputs/</code> 一起打包。</div></div>
+  </section>
+
+  <section id="faq">
+    <h2>八、常见问题</h2>
+    <div class="card">
+      <details open><summary>双击 install.bat 后窗口闪一下就关闭</summary><p>请确认使用的是最新版安装脚本。新版批处理会在成功或失败后停留在“Press any key to continue”。如果旧压缩包仍有问题，请下载最新版；也可以在项目文件夹地址栏输入 <code>cmd</code> 后回车，再运行 <code>install.bat</code> 查看完整错误。</p></details>
+      <details open><summary>状态一直是“未连接”怎么办？</summary><p>先关闭聊天窗口，双击一次 <code>install.bat</code>，再在扩展管理页点击刷新按钮。仍未连接时，检查项目目录下的 <code>logs/server.log</code> 和 <code>logs/native-host.log</code> 是否有报错。</p></details>
+      <details><summary>提示 API Key 无效或未配置</summary><p>回到扩展设置页，确认密钥完整复制，没有多余空格；模型保持 <code>deepseek-chat</code>。API Key 需要在 DeepSeek 控制台有可用余额/权限。</p></details>
+      <details><summary>点击页面按钮没有反应</summary><p>切换到普通网页标签页后再试。Chrome 内置页面（地址以 <code>chrome://</code> 开头）和部分安全页面禁止扩展注入脚本，这是浏览器限制。</p></details>
+      <details><summary>复杂表格任务提示操作轮次过多</summary><p>新版会为 <code>execute_script</code> 保留最多 12000 字符结果，并在达到工具上限时自动根据现有数据总结。仍需更多步骤时，可以在 <code>service/config.json</code> 调整 <code>max_tool_rounds</code>（建议 16～24，最高 40），然后重新运行安装脚本。</p></details>
+      <details><summary>我把文件夹移动了，是否需要重新安装？</summary><p>不需要卸载。把整个文件夹移动到新位置后，再双击一次 <code>install.bat</code>，它会更新 Native Messaging 路径。</p></details>
+      <details><summary>macOS 提示“无法验证开发者”怎么办？</summary><p>右键 <code>install.command</code> 选择“打开”；仍被阻止时，到“系统设置 → 隐私与安全性”，在底部点击“仍要打开”。也可以直接打开终端，在项目目录执行 <code>bash install.command</code>。</p></details>
+      <details><summary>macOS 安装后仍显示未连接怎么办？</summary><p>完全退出并重新打开 Chrome/Edge，再点击扩展管理页的刷新按钮。检查 <code>~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.browser.assistant.json</code>（Edge 对应 Microsoft Edge 目录）是否存在；然后重新运行 <code>bash install.command</code>。</p></details>
+      <details><summary>如何停止本地服务？</summary><p>关闭浏览器后服务通常会保持后台运行。需要停止时，可在任务管理器结束“Python/浏览器 AI 助手服务”进程；下次打开扩展会自动重新启动。</p></details>
+    </div>
+  </section>
+
+  <section id="remove">
+    <h2>八、卸载方式</h2>
+    <div class="card"><ol><li>在 Chrome/Edge 扩展管理页点击“移除”。</li><li>删除解压出来的项目文件夹即可。</li><li>Windows 的 Native Messaging 注册项和 macOS 的清单文件可以保留，不会影响其他浏览器；想彻底清理时，重新运行安装脚本前手动删除对应的 <code>NativeMessagingHosts/com.browser.assistant.json</code> 即可。</li></ol></div>
+  </section>
+
+ 
+  <footer>浏览器 AI 助手 · 本说明文件可离线打开 · API Key 请妥善保管</footer>
+</main>
+<script>
+  document.querySelectorAll('.copy').forEach((button) => button.addEventListener('click', async () => {
+    const code = button.parentElement.querySelector('code').innerText;
+    try { await navigator.clipboard.writeText(code); button.textContent = '已复制'; setTimeout(() => button.textContent = '复制', 1600); }
+    catch { button.textContent = '请手动复制'; }
+  }));
+</script>
+</body>
+</html>

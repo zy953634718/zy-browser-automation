@@ -1,0 +1,9 @@
+service/data/agent_memory.json
+service/config.local.json
+outputs/
+logs/
+screenshots/
+__pycache__/
+*.pyc
+.venv/
+dist/

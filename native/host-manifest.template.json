@@ -1,0 +1,12 @@
+{
+  "name": "com.browser.assistant",
+  "description": "浏览器 AI 助手 - 本地服务拉起器",
+  "path": "__PYTHONW_PATH__",
+  "args": [
+    "__HOST_PATH__"
+  ],
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://onegmgllhomnialihompnffflgabapnf/"
+  ]
+}

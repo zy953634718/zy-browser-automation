@@ -1,0 +1,4 @@
+interface:
+  display_name: "浏览器 AI 助手"
+  short_description: "通用浏览器 AI 助手：DeepSeek 对话控制浏览器（页面读取、点击、输入、截图等）"
+  default_prompt: "使用 $browser-ai-assistant 启动浏览器 AI 助手服务，并通过 HTTP 接口或对话与浏览器交互。"

@@ -1,0 +1,11 @@
+{
+  "api_key": "",
+  "model": "deepseek-chat",
+  "base_url": "https://api.deepseek.com",
+  "ws_port": 18767,
+  "http_port": 18768,
+  "max_tool_rounds": 16,
+  "tool_result_max_len": 4000,
+  "page_content_result_max_len": 8000,
+  "execute_script_result_max_len": 12000
+}

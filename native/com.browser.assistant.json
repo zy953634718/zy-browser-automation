@@ -1,0 +1,12 @@
+{
+  "name": "com.browser.assistant",
+  "description": "浏览器 AI 助手 - 本地服务拉起器",
+  "path": "D:\\ai\\zy-browser-automation\\.venv\\Scripts\\pythonw.exe",
+  "args": [
+    "D:\\ai\\zy-browser-automation\\native\\host.py"
+  ],
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://onegmgllhomnialihompnffflgabapnf/"
+  ]
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f1f3f4"/>
+  <rect width="960" height="64" fill="#fff"/>
+  <text x="28" y="40" fill="#202124" font-size="22" font-family="Arial,Microsoft YaHei,sans-serif">扩展程序</text>
+  <rect x="700" y="17" width="220" height="34" rx="17" fill="#f8fafd" stroke="#dadce0"/>
+  <text x="720" y="40" fill="#5f6368" font-size="14" font-family="Arial,sans-serif">开发者模式</text><rect x="873" y="25" width="32" height="18" rx="9" fill="#1a73e8"/><circle cx="896" cy="34" r="7" fill="#fff"/>
+  <rect x="28" y="91" width="904" height="64" rx="8" fill="#e8f0fe"/>
+  <text x="52" y="130" fill="#174ea6" font-size="17" font-family="Microsoft YaHei,sans-serif">已开启开发者模式</text>
+  <rect x="28" y="178" width="190" height="42" rx="5" fill="#1a73e8"/><text x="53" y="205" fill="#fff" font-size="16" font-family="Microsoft YaHei,sans-serif">加载已解压的扩展</text>
+  <rect x="234" y="178" width="140" height="42" rx="5" fill="#fff" stroke="#dadce0"/><text x="273" y="205" fill="#3c4043" font-size="16" font-family="Microsoft YaHei,sans-serif">打包扩展</text>
+  <rect x="28" y="252" width="904" height="208" rx="10" fill="#fff" stroke="#dadce0"/>
+  <rect x="52" y="277" width="64" height="64" rx="12" fill="#3478f6"/><text x="70" y="319" fill="#fff" font-size="28" font-family="Arial">AI</text>
+  <text x="138" y="293" fill="#202124" font-size="18" font-family="Microsoft YaHei,sans-serif">浏览器 AI 助手</text>
+  <text x="138" y="323" fill="#5f6368" font-size="14" font-family="Microsoft YaHei,sans-serif">通过 DeepSeek 对话控制浏览器</text>
+  <text x="138" y="360" fill="#5f6368" font-size="13" font-family="Arial,sans-serif">ID：onegmgllhomnialihompnffflgabapnf</text>
+  <rect x="744" y="284" width="150" height="38" rx="5" fill="#1a73e8"/><text x="789" y="309" fill="#fff" font-size="15" font-family="Microsoft YaHei,sans-serif">已启用</text>
+  <text x="52" y="432" fill="#5f6368" font-size="14" font-family="Microsoft YaHei,sans-serif">点击“加载已解压的扩展”，选择安装包内的 browser-extension 文件夹。</text>
+</svg>
